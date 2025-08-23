@@ -1,0 +1,16 @@
+import React from 'react'
+
+function Navbar() {
+  return (
+    <div>
+      <nav className='bg-black py-4'>
+    <h1 className='text-3xl font-bold text-center text-white '>
+        Welcome to the Course Site
+      </h1>
+      </nav>
+      
+    </div>
+  )
+}
+
+export default Navbar
