@@ -6,7 +6,7 @@ export const products = [
     description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    image: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg",
     rating: {
       rate: 3.9,
       count: 120,
@@ -20,7 +20,7 @@ export const products = [
       "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
     category: "men's clothing",
     image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "https://images.pexels.com/photos/9558567/pexels-photo-9558567.jpeg",
     rating: {
       rate: 4.1,
       count: 259,
@@ -33,7 +33,7 @@ export const products = [
     description:
       "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
     category: "men's clothing",
-    image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    image: "https://images.pexels.com/photos/6764033/pexels-photo-6764033.jpeg",
     rating: {
       rate: 4.7,
       count: 500,
@@ -46,7 +46,7 @@ export const products = [
     description:
       "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
     category: "men's clothing",
-    image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    image: "https://images.pexels.com/photos/3822943/pexels-photo-3822943.png",
     rating: {
       rate: 2.1,
       count: 430,
@@ -60,7 +60,7 @@ export const products = [
     description:
       "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
     category: "jewelery",
-    image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    image: "https://images.pexels.com/photos/32649635/pexels-photo-32649635.jpeg",
     rating: {
       rate: 4.6,
       count: 400,
@@ -73,7 +73,7 @@ export const products = [
     description:
       "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
     category: "jewelery",
-    image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    image: "https://images.pexels.com/photos/6587822/pexels-photo-6587822.jpeg",
     rating: {
       rate: 3.9,
       count: 70,
@@ -86,7 +86,7 @@ export const products = [
     description:
       "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
     category: "jewelery",
-    image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+    image: "https://images.pexels.com/photos/4814085/pexels-photo-4814085.jpeg",
     rating: {
       rate: 3,
       count: 400,
