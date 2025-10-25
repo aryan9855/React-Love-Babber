@@ -8,7 +8,7 @@ function ItemDate(props) {
       <span> {month} </span>
       <span> {year} </span>
     </div>
-  )
+  );
 }
 
 export default ItemDate
