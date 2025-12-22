@@ -1,16 +1,21 @@
-import { use, useContext, useEffect } from "react"; 
+import { useContext, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Blogs from "./components/Blogs";
 import Pagination from "./components/Pagination";
 import { AppContext } from "./context/AppContext.jsx";
-import { Route, Routes, useSearchParams } from "react-router-dom";
+import { Route, Routes, useSearchParams, useLocation } from "react-router-dom";
+import Home from "./Pages/Home.jsx";
+import BlogPage from "./Pages/BlogPage.jsx";
+import TagPage from "./Pages/TagPage.jsx";
+import CategoryPage from "./Pages/CategoryPage.jsx";
+
 function App() {
   const { fetchBlogPost } = useContext(AppContext);
 
-  const [searchParams,setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
-  const location = uselocation();
+  const location = useLocation();
 
   useEffect(() => {
     const page = searchParams.get("page") ?? 1;
@@ -25,7 +30,7 @@ function App() {
     else{
       fetchBlogPost(Number(page)); 
     }
-  }, [location.pathname,location.search]);
+  }, [location.pathname, location.search]);
 
   return (
     <Routes>

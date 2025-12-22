@@ -9,13 +9,15 @@ export const AppContextProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
-  async function fetchBlogPost(page = 1,tag = null , category) {
+  async function fetchBlogPost(page = 1, tag = null, category = null) {
     setLoading(true);
-    let url = `${baseUrl} ? page=${page}`;
-    if(tag){
+    let url = `${baseUrl}?page=${page}`;
+
+    if (tag) {
       url += `&tag=${tag}`;
     }
-    if(category){
+
+    if (category) {
       url += `&category=${category}`;
     }
     try {
