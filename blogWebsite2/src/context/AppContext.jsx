@@ -3,16 +3,17 @@ import { createContext, useState } from "react";
 import { baseUrl } from "../baseUrl";
 import { useNavigate } from "react-router-dom";
 
-export const AppContext = createContext();
+export const AppContext = createContext(); // create a global data bucket
 
-export default function AppContextProvider({ children }) {
+function AppContextProvider({ children }) {
+  //global state variables
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(null);
-  const navigate = useNavigate();
+  const [totalPages, setTotalPages] = useState(null); // in footer the previous and next button will be shown based on the total pages
+  const navigate = useNavigate();// to navigate to the next or previous page without reloading the page
 
-  // Fetch Blog Data
+  // Fetch Blog Data from the API
   const fetchBlogPosts = async (page = 1, tag = null, category = null) => {
     setLoading(true);
     let url = `${baseUrl}?page=${page}`;
@@ -59,10 +60,11 @@ export default function AppContextProvider({ children }) {
     fetchBlogPosts,
     handlePageChange,
   };
-
+// Provide global context values to all child components
   return (
     <AppContext.Provider value={value}>
       {children}
     </AppContext.Provider>
   );
 }
+export default AppContextProvider;

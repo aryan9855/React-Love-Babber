@@ -8,9 +8,7 @@ import CategoryPage from "./Pages/CategoryPage";
 import BlogPage from "./Pages/BlogPage";
 import { Routes, Route, useSearchParams, useLocation } from "react-router-dom";
 
-
-
-export default function App() {
+function App() {
   const { fetchBlogPosts } = useContext(AppContext);
   const [searchParams,setSearchParams] = useSearchParams();
   const location = useLocation();
@@ -44,3 +42,6 @@ export default function App() {
     </Routes>
   );
 }
+
+
+export default App;

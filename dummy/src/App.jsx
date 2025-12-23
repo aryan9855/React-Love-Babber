@@ -20,7 +20,7 @@ useEffect(() => {
 
   return (
     <div className='App'>
-      <input type="text"  onChange={changeHandler} />
+      <input type="text"  onChange={changeHandler}/>
 
     </div>
     

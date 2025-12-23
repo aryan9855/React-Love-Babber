@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Filter from './components/Filter'
 import Cards from './components/Cards'
@@ -11,21 +9,21 @@ import Spinner from './components/Spinner'
 
 function App() {
 
-  const [courses, setCourses] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [category, setCategory] = useState(filterData.title);
+  const [courses, setCourses] = useState(null); //All courses coming from API
+  const [loading, setLoading] = useState(true); //Show spinner or not
+  const [category, setCategory] = useState("All"); //Which filter button is selected
 
   async function fetchData() { 
    setLoading(true);
       try {
-        const res = await fetch(apiUrl);
-        const output = await res.json();
-        setCourses(output.data);
+        const res = await fetch(apiUrl); // wait until the API call is complete
+        const output = await res.json(); // convert the response to JSON
+        setCourses(output.data); // set the courses to the state
 
       } catch (error) {
-        toast.error("Something went wrong ");
+        toast.error("Something went wrong "); // show error toast if API call fails
       }
-      setLoading(false);
+      setLoading(false); // hide spinner if API call is complete
   }
   useEffect(() => {
     fetchData();
@@ -33,12 +31,16 @@ function App() {
 
 
   return (
+    // NavBar
     <div className='min-h-screen flex flex-col'> 
       <div>
         <Navbar />
       </div>
       <div className='bg-[#212121] flex-grow pt-6'>
+      
+
    <div>
+    
         <Filter filterData={filterData} 
         category = {category}
         setCategory = {setCategory}/>
