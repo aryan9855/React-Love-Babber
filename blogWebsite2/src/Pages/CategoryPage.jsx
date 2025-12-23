@@ -10,7 +10,7 @@ const CategoryPage = () => {
     return (
         <div className="pt-20">
             <Header />
-            <div className="w-11/12 max-w-4xl mx-auto space-y-6">
+            <div className="w-11/12 max-w-4xl mx-auto space-y-6 pb-24">
                 <div className="pt-2 flex items-center gap-3">
                     <button
                         onClick={() => navigation(-1)}
