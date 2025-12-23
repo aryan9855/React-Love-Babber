@@ -37,27 +37,39 @@ const BlogPage = () => {
   }, [location.pathname]);
 
   return (
-    <div>
+    <div className="pt-20">
       <Header />
-      <div>
-        <button onClick={() => navigation(-1)}>Back</button>
-      </div>
-      <div>
-        {loading ? (
-          <p>Loading...</p>
-        ) : blog ? (
-          <div>
-            <BlogDetails post={blog} />
-            <h2>Releated Blogs</h2>
-            {relatedblog.map((post) => (
-              <div key={post.id}>
-                <BlogDetails post={post} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p>No Blog Found</p>
-        )}
+      <div className="w-11/12 max-w-4xl mx-auto space-y-6">
+        <div className="pt-2">
+          <button
+            onClick={() => navigation(-1)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-blue-500 text-blue-500 hover:bg-blue-50 dark:border-blue-300 dark:text-blue-200 dark:hover:bg-blue-900/30 transition cursor-pointer"
+          >
+            ← Back
+          </button>
+        </div>
+
+        <div>
+          {loading ? (
+            <p className="text-center text-lg font-semibold text-blue-500">Loading...</p>
+          ) : blog ? (
+            <div className="space-y-6">
+              <BlogDetails post={blog} />
+              <h2 className="text-lg font-semibold text-blue-600 dark:text-blue-200">
+                Related Blogs
+              </h2>
+              {relatedblog.map((post) => (
+                <div key={post.id}>
+                  <BlogDetails post={post} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-lg font-semibold text-gray-600 dark:text-gray-300">
+              No Blog Found
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

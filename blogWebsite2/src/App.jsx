@@ -9,7 +9,7 @@ import BlogPage from "./Pages/BlogPage";
 import { Routes, Route, useSearchParams, useLocation } from "react-router-dom";
 
 function App() {
-  const { fetchBlogPosts } = useContext(AppContext);
+  const { fetchBlogPosts, theme } = useContext(AppContext);
   const [searchParams,setSearchParams] = useSearchParams();
   const location = useLocation();
 
@@ -33,13 +33,20 @@ function App() {
     }
   }, [location.pathname,location.search]);
 
+  const appShellClass =
+    theme === "dark"
+      ? "bg-gray-900 text-gray-100"
+      : "bg-gray-50 text-gray-900";
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/blog/:blogId" element={<BlogPage /> } />
-      <Route path="/tags/:tag" element={<TagPage />} />
-      <Route path="/categories/:category" element={<CategoryPage />} />
-    </Routes>
+    <div className={`${appShellClass} min-h-screen`}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog/:blogId" element={<BlogPage /> } />
+        <Route path="/tags/:tag" element={<TagPage />} />
+        <Route path="/categories/:category" element={<CategoryPage />} />
+      </Routes>
+    </div>
   );
 }
 

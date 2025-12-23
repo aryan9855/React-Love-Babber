@@ -1,5 +1,5 @@
 // src/context/AppContext.jsx
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { baseUrl } from "../baseUrl";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,20 @@ function AppContextProvider({ children }) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null); // in footer the previous and next button will be shown based on the total pages
   const navigate = useNavigate();// to navigate to the next or previous page without reloading the page
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === "undefined") return "light";
+    return localStorage.getItem("theme") ?? "light";
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   // Fetch Blog Data from the API
   const fetchBlogPosts = async (page = 1, tag = null, category = null) => {
@@ -48,6 +62,10 @@ function AppContextProvider({ children }) {
     setPage(newPage);
   };
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   const value = {
     posts,
     setPosts,
@@ -59,6 +77,8 @@ function AppContextProvider({ children }) {
     setTotalPages,
     fetchBlogPosts,
     handlePageChange,
+    theme,
+    toggleTheme,
   };
 // Provide global context values to all child components
   return (
