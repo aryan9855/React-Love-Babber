@@ -9,9 +9,10 @@ function App() {
       <Toaster />
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="*" element={<NotFound />} />
+</Routes>
+
       </BrowserRouter>
     </>
   );
